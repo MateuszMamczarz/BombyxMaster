@@ -28,6 +28,12 @@
   padding: 48px;
 }
 
+img.icon {
+  padding: 20px 60px;
+  height: 160px;
+  filter: hue-rotate(210deg) brightness(0.7)
+}
+
 .circle {
   border-radius: 50%;
   width: 120px;

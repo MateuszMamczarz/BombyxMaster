@@ -1,6 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal } from 'antd';
 import { Card, Col, Row, Carousel, Statistic, Result, Button, Progress } from 'antd';
+const { Meta } = Card;
+
+const getProgressDescription = (progress) => {
+    switch (progress) {
+        case 0:
+        case 10:
+            return 'Validating Inverse Dimension Matrix'
+        case 20:
+        case 30:
+            return 'Synthesizing fabolous materials';
+        case 40:
+        case 50:
+            return 'Initializing Robotic Sewing-Path AI';
+        case 60:
+        case 70:
+            return 'Threading fabric compositors';
+        case 80:
+        case 90:
+            return 'Recalculating 4D splines';
+        case 100:
+            return 'Finalizing your clothes';
+        default:
+            return 'Something is not ok'
+    }
+}
+
+const titles = {
+    dimensions: 'Choose your dimensions',
+    results: 'Review your design',
+    loading: 'Generating your design',
+    success: 'Confirmed'
+}
 
 const renderResults = () =>
     <Row gutter={16}>
@@ -40,69 +72,83 @@ const renderResults = () =>
         </Col>
     </Row>
 
-const renderSuccess = ({ status, progress }) => {
-    switch (status) {
-        case 'loading':
-            return (
-                <div style={{ textAlign: 'center', height: '350px', verticalAlign: 'middle', padding: '64px' }}>
-                    <Progress type="circle" percent={progress} />
-                    <h2 style={{ padding: '64px' }}>{getProgressDescription(progress)}</h2>
-                </div>
-            );
+const renderSuccess = () =>
+    <Result
+        style={{ height: '350px' }}
+        status="success"
+        title="Your design is ready!"
+        subTitle="Order number: 2017182818828182881"
+        extra={[<Button key="Export">Export</Button>]}
+    />
+
+const renderLoading = (progress) =>
+    <div style={{ textAlign: 'center', height: '350px', verticalAlign: 'middle', padding: '64px' }}>
+        <Progress type="circle" percent={progress} />
+        <h2 style={{ padding: '64px' }}>{getProgressDescription(progress)}</h2>
+    </div>
+
+const renderDimensions = () =>
+    <div>
+        <Row gutter={16}>
+            <Col span={8}>
+                <Card hoverable
+                    cover={<img class="icon" src="https://cdn4.tailorstore.com/ui/gefjun/icons/meastape-gold.svg" alt="meastape-gold" />}
+                >
+                    <Meta
+                        title="Use a tape"
+                        description="Use a tape measure to measure your body, a friend is recommended"
+                    />
+                </Card>
+            </Col>
+            <Col span={8}>
+                <Card hoverable
+                    cover={<img class="icon" src="https://cdn1.tailorstore.com/ui/gefjun/icons/shirt-gold.svg" alt="shirt-gold" />}
+                >
+                    <Meta
+                        title="Copy clothing"
+                        description="Use a tape to get the dimensions of your favorite piece of clothing"
+                    />
+                </Card>
+            </Col>
+            <Col span={8}>
+                <Card hoverable
+                    cover={<img class="icon" src="https://cdn2.tailorstore.com/ui/gefjun/icons/phone-gold.svg" alt="phone-gold" />}
+                >
+                    <Meta
+                        title="Use our app"
+                        description="Get accurate results by using cutting edge technology and augmented reality"
+                    />
+                </Card>
+            </Col>
+        </Row>
+    </div>
+
+const renderView = (step, progress) => {
+    switch (step) {
         case 'success':
+            return renderSuccess()
+        case 'loading':
+            return renderLoading(progress)
+        case 'results':
+            return renderResults()
+        case 'dimensions':
+            return renderDimensions()
         default:
-            return (
-                <Result
-                    style={{ height: '350px' }}
-                    status="success"
-                    title="Your design is ready!"
-                    subTitle="Order number: 2017182818828182881"
-                    extra={[<Button key="Export">Export</Button>]}
-                />);
+            return renderResults()
     }
 }
 
-const getProgressDescription = (progress) => {
-    switch (progress) {
-        case 0:
-        case 10:
-            return 'Validating Inverse Dimension Matrix'
-        case 20:
-        case 30:
-            return 'Synthesizing fabolous materials';
-        case 40:
-        case 50:
-            return 'Initializing Robotic Sewing-Path AI';
-        case 60:
-        case 70:
-            return 'Threading fabric compositors';
-        case 80:
-        case 90:
-            return 'Recalculating 4D splines';
-        case 100:
-            return 'Finalizing your clothes';
-        default:
-            return 'Something is not ok'
-    }
-}
-
-const titles = {
-    results: 'Review your design',
-    loading: 'Generating your design',
-    success: 'Confirmed'
-}
-
-const Dialog = ({ status, visible, onOk, onCancel, progress }) =>
+const Dialog = ({ step, visible, onOk, onCancel, progress }) =>
     <Modal
-        title={titles[status]}
+        title={titles[step]}
         centered
         width={800}
         visible={visible}
         onOk={onOk}
         onCancel={onCancel}
-        okButtonProps={{ disabled: status === 'loading' }}
+        okButtonProps={{ disabled: step === 'loading' }}
     >
-        {status === 'results' ? renderResults() : renderSuccess({ status, progress })}
+        {renderView(step, progress)}
 
     </Modal>
 

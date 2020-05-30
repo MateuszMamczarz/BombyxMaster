@@ -12,7 +12,7 @@ class App extends React.Component {
     super();
     this.state = {
       modalVisible: false,
-      status: 'results', //results, loading, success
+      step: 'dimensions', //results, loading, success, dimensions
       progress: 0,
     }
   }
@@ -31,11 +31,34 @@ class App extends React.Component {
       if (percentage > 100) {
         clearInterval(interval);
         setTimeout(() => {
-          this.setState({ status: 'success' })
+          this.setState({ step: 'success' })
         }, 1500);
       }
     }, 700);
   }
+
+  nextStep = (step) => {
+    switch (step) {
+      case 'dimensions':
+        this.setState({ step: 'results' });
+        break;
+      case 'results':
+        this.setState({ step: 'loading' });
+        this.exportDesign();
+        break;
+      case 'loading': // should never happen
+        this.setState({ step: 'success' });
+        break;
+      case 'success':
+        this.setState({ modalVisible: false });
+        break;
+      default:
+        this.setState({ step: 'dimensions' });
+        break;
+    }
+  }
+
+
 
   render() {
     return (
@@ -45,13 +68,13 @@ class App extends React.Component {
           <Dress />
         </Sheets>
         <Button type="primary" onClick={() => this.setModalVisible(true)} style={{ position: 'fixed', right: '16px', bottom: '16px' }} >
-          Show modal
+          {this.state.step}
         </Button>
         <Dialog
-          status={this.state.status}
+          step={this.state.step}
           progress={this.state.progress}
           visible={this.state.modalVisible}
-          onOk={this.exportDesign}
+          onOk={() => this.nextStep(this.state.step)}
           onCancel={() => this.setModalVisible(false)}
         />
       </section>
