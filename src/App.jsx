@@ -72,7 +72,7 @@ class App extends React.Component {
   render() {
     return (
       <section className={`main-section ${this.state.selectedArea === 2 ? 'bg2' : ''}`} >
-        <Picker options={['test1', 'test2', 'test3', 'test4']} title={this.pickerTitle[this.state.selectedArea]} />
+        <Picker options={['test1', 'test2', 'test3', 'test4']} title={this.pickerTitle[this.state.selectedArea]} hidden={this.state.selectedArea === 2} />
         <Sheets>
           <Dress selectedArea={this.state.selectedArea} onAreaChange={this.onAreaChange} />
         </Sheets>
