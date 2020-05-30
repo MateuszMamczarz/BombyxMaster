@@ -58,6 +58,7 @@ class App extends React.Component {
         break;
       case 'success':
         this.setState({ modalVisible: false });
+        this.setState({ step: 'dimensions' });
         break;
       default:
         this.setState({ step: 'dimensions' });
