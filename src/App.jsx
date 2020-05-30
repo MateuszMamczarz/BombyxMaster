@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   setModalVisible(modalVisible) {
-    if (modalVisible) this.setState({ status: 'results', progress: 0 });
+    if (modalVisible) this.setState({ status: 'dimensions', progress: 0 });
     this.setState({ modalVisible });
   }
 
@@ -58,7 +58,6 @@ class App extends React.Component {
         break;
       case 'success':
         this.setState({ modalVisible: false });
-        this.setState({ step: 'dimensions' });
         break;
       default:
         this.setState({ step: 'dimensions' });
