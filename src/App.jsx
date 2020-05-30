@@ -14,7 +14,14 @@ class App extends React.Component {
       modalVisible: false,
       status: 'results', //results, loading, success
       progress: 0,
+      selectedArea: 1,
     }
+    this.pickerTitle = [
+      "KOŁNIERZ",
+      "RĘKAW",
+      "BIODRA",
+      "DŁUGOŚĆ"
+    ]
   }
 
   setModalVisible(modalVisible) {
@@ -37,12 +44,16 @@ class App extends React.Component {
     }, 700);
   }
 
+  onAreaChange = (type) => {
+    this.setState({ selectedArea: type});
+  }
+
   render() {
     return (
       <section className="main-section" >
-        <Picker options={['test1', 'test2', 'test3', 'test4']} title="KOLNIERZ" />
+        <Picker options={['test1', 'test2', 'test3', 'test4']} title={this.pickerTitle[this.state.selectedArea]} />
         <Sheets>
-          <Dress />
+          <Dress selectedArea={this.state.selectedArea} onAreaChange={this.onAreaChange}/>
         </Sheets>
         <Button type="primary" onClick={() => this.setModalVisible(true)} style={{ position: 'fixed', right: '16px', bottom: '16px' }} >
           Show modal
