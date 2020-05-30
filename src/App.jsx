@@ -42,7 +42,7 @@ class App extends React.Component {
       <section className="main-section" >
         <Picker options={['test1', 'test2', 'test3', 'test4']} title="KOLNIERZ" />
         <Sheets>
-          {/* <Dress /> */}
+          <Dress />
         </Sheets>
         <Button type="primary" onClick={() => this.setModalVisible(true)} style={{ position: 'fixed', right: '16px', bottom: '16px' }} >
           Show modal
