@@ -1,9 +1,9 @@
 @import '~antd/dist/antd.css';
 
 .main-section {
-  background: rgba(16, 142, 233, 1);
   color: #fff;
   height: 100vh;
+  background-image: url('./images/bg.png');
   background-size: cover;
 }
 
