@@ -91,7 +91,7 @@ const renderDimensions = () =>
         <Row gutter={16}>
             <Col span={8}>
                 <Card hoverable
-                    cover={<img class="icon" src="https://cdn4.tailorstore.com/ui/gefjun/icons/meastape-gold.svg" alt="meastape-gold" />}
+                    cover={<img className="icon" src="https://cdn4.tailorstore.com/ui/gefjun/icons/meastape-gold.svg" alt="meastape-gold" />}
                 >
                     <Meta
                         title="Zmierz się sama"
@@ -101,7 +101,7 @@ const renderDimensions = () =>
             </Col>
             <Col span={8}>
                 <Card hoverable
-                    cover={<img class="icon" src="https://cdn1.tailorstore.com/ui/gefjun/icons/shirt-gold.svg" alt="shirt-gold" />}
+                    cover={<img className="icon" src="https://cdn1.tailorstore.com/ui/gefjun/icons/shirt-gold.svg" alt="shirt-gold" />}
                 >
                     <Meta
                         title="Zmierz swoje ubranie"
@@ -111,7 +111,7 @@ const renderDimensions = () =>
             </Col>
             <Col span={8}>
                 <Card hoverable
-                    cover={<img class="icon" src="https://cdn2.tailorstore.com/ui/gefjun/icons/phone-gold.svg" alt="phone-gold" />}
+                    cover={<img className="icon" src="https://cdn2.tailorstore.com/ui/gefjun/icons/phone-gold.svg" alt="phone-gold" />}
                 >
                     <Meta
                         title="Użyj naszej aplikacji "
