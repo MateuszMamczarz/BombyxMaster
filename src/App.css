@@ -116,3 +116,22 @@ img.icon {
   background: url('./images/postac_dlugosc.png') no-repeat;
   background-size: contain;
 }
+
+
+.dress-dots {
+  background-color: black;
+  color: black;
+}
+
+.dress-carousel {
+  position: relative;
+  top: 14vh;
+}
+
+.dress-carousel .slick-dots li.slick-active button {
+  background: black;
+}
+
+.dress-carousel .slick-dots li button {
+  background: black;
+}
