@@ -43,13 +43,12 @@ img.icon {
 }
 
 .dress-model {
-  background: url('./images/postac_biodra.png');
-  background-size: cover;
   width: 200px;
-  height: 650px;
+  height: 67vh;
   position: relative;
   left: 42%;
   top: 14%;
+  background-size: contain;
 }
 
 .sheets {
@@ -61,4 +60,59 @@ img.icon {
   margin:0 auto;
   width: 900px;
   height: 100%;
+}
+
+.collar-area {
+  position: relative;
+  width: 10vh;
+  height: 10vh;
+  /* border: solid red 1px; */
+  top: 10%;
+  left: 4%;
+}
+
+.arms-area {
+  position: relative;
+  width: 9.5vh;
+  height: 9.5vh;
+  /* border: solid green 1px; */
+  top: 9%;
+  left: 11vh;
+}
+
+.hip-area {
+  position: relative;
+  width: 10vh;
+  height: 10vh;
+  /* border: solid blue 1px; */
+  top: 2%;
+}
+
+.width-area {
+  position: relative;
+  width: 18vh;
+  height: 18vh;
+  /* border: solid orange 1px; */
+  top: 3%;
+  left: 4%;
+}
+
+.dress-0 {
+  background: url('./images/postac_kolnierz.png') no-repeat;
+  background-size: contain;
+}
+
+.dress-1 {
+  background: url('./images/postac_rekawy.png') no-repeat;
+  background-size: contain;
+}
+
+.dress-2 {
+  background: url('./images/postac_biodra.png') no-repeat;
+  background-size: contain;
+}
+
+.dress-3 {
+  background: url('./images/postac_dlugosc.png') no-repeat;
+  background-size: contain;
 }
