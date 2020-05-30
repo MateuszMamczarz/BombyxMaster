@@ -17,7 +17,6 @@ const Dress = ({selectedArea, onAreaChange}) => {
                 <div className='hip-area-2' onClick={() => onAreaChange(2)}/>
                 <div className='width-area-2' onClick={() => onAreaChange(3)}/>
             </div>
-            <div>3</div>
         </Carousel>
     )
 }

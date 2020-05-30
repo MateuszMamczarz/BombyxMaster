@@ -17,9 +17,9 @@ class App extends React.Component {
       selectedArea: 1,
     }
     this.pickerTitle = [
-      "KOŁNIERZ",
+      "DEKOLT",
       "RĘKAW",
-      "BIODRA",
+      "WZÓR",
       "DŁUGOŚĆ"
     ]
   }
