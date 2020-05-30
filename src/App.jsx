@@ -14,7 +14,7 @@ class App extends React.Component {
       modalVisible: false,
       step: 'dimensions', //results, loading, success, dimensions
       progress: 0,
-      selectedArea: 1,
+      selectedArea: 0,
     }
     this.pickerTitle = [
       "DEKOLT",
