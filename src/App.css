@@ -41,6 +41,9 @@
   background-size: cover;
   width: 200px;
   height: 650px;
+  position: relative;
+  left: 42%;
+  top: 14%;
 }
 
 .sheets {
