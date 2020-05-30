@@ -7,11 +7,42 @@
   background-size: cover;
 }
 
+.title {
+  color: blue;
+  padding: 10%;
+  display: inline-block;
+  font-size: 3em;
+}
+
 .picker-container {
   border: 5px solid blue;
-  width: 100px;
-  height: 100px;
+  width: 400px;
+  height: 500px;
   position: relative;
   top: 5%;
   left: 5%;
+  color: black;
+}
+
+.picker-container .ant-row {
+  width: 100%;
+  align-content: center;
+  text-align: center;
+  height: 30%
+}
+
+.circle {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background-color: gray;
+  margin: auto;
+}
+
+.left {
+  margin-right: 20px;
+}
+
+.right {
+  margin-left: 20px;
 }
