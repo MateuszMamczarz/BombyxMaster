@@ -8,18 +8,18 @@ const Picker = ({ title, options, hidden }) => {
             <div className="circles">
                 <Row gutter={[32, 32]} >
                     <Col span={12}>
-                        <div className="circle"></div>
+                        <div className="circle" style={{ backgroundColor: '#bcc2dd' }}></div>
                     </Col>
                     <Col span={12}>
-                        <div className="circle"></div>
+                        <div className="circle" style={{ backgroundColor: '#d8573f' }}></div>
                     </Col>
                 </Row>
                 <Row gutter={[32, 32]} >
                     <Col span={12}>
-                        <div className="circle"></div>
+                        <div className="circle" style={{ backgroundColor: '#2d327d' }}></div>
                     </Col>
                     <Col span={12}>
-                        <div className="circle"></div>
+                        <div className="circle" style={{ backgroundColor: '#e1c3db' }}></div>
                     </Col>
                 </Row>
             </div>
