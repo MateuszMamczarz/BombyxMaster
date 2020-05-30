@@ -29,8 +29,8 @@ const getProgressDescription = (progress) => {
 }
 
 const titles = {
-    dimensions: 'Choose your dimensions',
-    results: 'Review your design',
+    dimensions: 'Wybierz sposób zdjęcia miary',
+    results: 'Oto Twój Projekt!',
     loading: 'Generating your design',
     success: 'Confirmed'
 }
@@ -44,29 +44,26 @@ const renderResults = () =>
             </Carousel>
         </Col>
         <Col span={12}>
-            <Card title="Dimensions" bordered={true} style={{ height: 460 }}>
+            <Card title="Wymiary" bordered={true} style={{ height: 460 }}>
                 <Row gutter={[16, 48]}>
                     <Col span={12}>
-                        <Statistic title="Height" value={173} />
+                        <Statistic title="Wzrost" value={173} />
                     </Col>
                     <Col span={12}>
-                        <Statistic title="Width" value={60} />
+                        <Statistic title="Talia" value={60} />
                     </Col>
                 </Row>
                 <Row gutter={[16, 48]}>
                     <Col span={12}>
-                        <Statistic title="Weigth" value='Plus sized' />
+                        <Statistic title="Biust" value={70} />
                     </Col>
                     <Col span={12}>
-                        <Statistic title="Hips" value='Thick' />
+                        <Statistic title="Długość ręki" value={40} />
                     </Col>
                 </Row>
                 <Row gutter={[16, 48]}>
                     <Col span={12}>
-                        <Statistic title="Shoulder" value={156} />
-                    </Col>
-                    <Col span={12}>
-                        <Statistic title="Arms" value={55} />
+                        <Statistic title="Szerokość pleców" value={30} />
                     </Col>
                 </Row>
             </Card>
@@ -97,8 +94,8 @@ const renderDimensions = () =>
                     cover={<img class="icon" src="https://cdn4.tailorstore.com/ui/gefjun/icons/meastape-gold.svg" alt="meastape-gold" />}
                 >
                     <Meta
-                        title="Use a tape"
-                        description="Use a tape measure to measure your body, a friend is recommended"
+                        title="Zmierz się sama"
+                        description="Zmierz się przy pomocy centymetra krawieckiego, najlepiej z pomocą przyjaciółki."
                     />
                 </Card>
             </Col>
@@ -107,8 +104,8 @@ const renderDimensions = () =>
                     cover={<img class="icon" src="https://cdn1.tailorstore.com/ui/gefjun/icons/shirt-gold.svg" alt="shirt-gold" />}
                 >
                     <Meta
-                        title="Copy clothing"
-                        description="Use a tape to get the dimensions of your favorite piece of clothing"
+                        title="Zmierz swoje ubranie"
+                        description="Użyj centymetra krawieckiego aby zdjąć miarę bezpośredio z Twojej ulubionej rzeczy."
                     />
                 </Card>
             </Col>
@@ -117,8 +114,8 @@ const renderDimensions = () =>
                     cover={<img class="icon" src="https://cdn2.tailorstore.com/ui/gefjun/icons/phone-gold.svg" alt="phone-gold" />}
                 >
                     <Meta
-                        title="Use our app"
-                        description="Get accurate results by using cutting edge technology and augmented reality"
+                        title="Użyj naszej aplikacji "
+                        description="Pozwól aby nasze algorytmy zdjęły z Ciebie miarę z pomocą naszej aplikacji na komórkę."
                     />
                 </Card>
             </Col>
@@ -147,7 +144,8 @@ const Dialog = ({ step, visible, onOk, onCancel, progress }) =>
         width={800}
         visible={visible}
         onOk={onOk}
-        okText={step !== 'success' ? 'Next' : 'Finish'}
+        okText={step !== 'success' ? 'Następnie' : 'Zakończ'}
+        cancelText={"Anuluj"}
         onCancel={onCancel}
         okButtonProps={{ hidden: step === 'loading' }}
         cancelButtonProps={{ hidden: step === 'success' }}

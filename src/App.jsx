@@ -65,6 +65,21 @@ class App extends React.Component {
     }
   }
 
+  getName = (step) => {
+    switch (step) {
+      case 'dimensions':
+        return 'Określ wymiary';
+      case 'results':
+        return 'Wynik';
+      case 'loading': // should never happen
+      return 'Ładowanie';
+      case 'success':
+        return 'Sukces';
+      default:
+        return "Określ wymiary";
+    }
+  }
+
   onAreaChange = (type) => {
     this.setState({ selectedArea: type });
   }
@@ -77,7 +92,7 @@ class App extends React.Component {
           <Dress selectedArea={this.state.selectedArea} onAreaChange={this.onAreaChange} />
         </Sheets>
         <Button type="primary" onClick={() => this.setModalVisible(true)} style={{ position: 'fixed', right: '16px', bottom: '16px' }} >
-          {this.state.step}
+          {this.getName(this.state.step)}
         </Button>
         <Dialog
           step={this.state.step}
