@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal } from 'antd';
+import { SmileOutlined } from '@ant-design/icons';
 import { Card, Col, Row, Carousel, Statistic, Result, Button, Progress } from 'antd';
 const { Meta } = Card;
 
@@ -10,18 +11,18 @@ const getProgressDescription = (progress) => {
             return 'Validating Inverse Dimension Matrix'
         case 20:
         case 30:
-            return 'Synthesizing fabolous materials';
+            return 'Synthesizing Space Grade Materials';
         case 40:
         case 50:
             return 'Initializing Robotic Sewing-Path AI';
         case 60:
         case 70:
-            return 'Threading fabric compositors';
+            return 'Threading Fabric Compositors';
         case 80:
         case 90:
-            return 'Recalculating 4D splines';
+            return 'Recalculating 4D Splines';
         case 100:
-            return 'Finalizing your clothes';
+            return 'Finalizing Your Clothes';
         default:
             return 'Something is not ok'
     }
@@ -74,11 +75,12 @@ const renderResults = () =>
 
 const renderSuccess = () =>
     <Result
+        icon={<SmileOutlined />}
         style={{ height: '350px' }}
-        status="success"
+        status="info"
         title="Your design is ready!"
         subTitle="Order number: 2017182818828182881"
-        extra={[<Button key="Export">Export</Button>]}
+        extra={[<Button key="Export" href='./dimensions.csv'>Export</Button>]}
     />
 
 const renderLoading = (progress) =>
@@ -145,8 +147,10 @@ const Dialog = ({ step, visible, onOk, onCancel, progress }) =>
         width={800}
         visible={visible}
         onOk={onOk}
+        okText={step !== 'success' ? 'Next' : 'Finish'}
         onCancel={onCancel}
-        okButtonProps={{ disabled: step === 'loading' }}
+        okButtonProps={{ hidden: step === 'loading' }}
+        cancelButtonProps={{ hidden: step === 'success' }}
     >
         {renderView(step, progress)}
 
