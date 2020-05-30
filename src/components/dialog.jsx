@@ -32,7 +32,7 @@ const titles = {
     dimensions: 'Wybierz sposób zdjęcia miary',
     results: 'Oto Twój Projekt!',
     loading: 'Generating your design',
-    success: 'Confirmed'
+    success: 'Potwierdzenie'
 }
 
 const renderResults = () =>
@@ -75,9 +75,9 @@ const renderSuccess = () =>
         icon={<SmileOutlined />}
         style={{ height: '350px' }}
         status="info"
-        title="Your design is ready!"
-        subTitle="Order number: 2017182818828182881"
-        extra={[<Button key="Export" href='./dimensions.csv'>Export</Button>]}
+        title="Twój projekt jest gotowy!"
+        subTitle="Numer zamówienia: 2017182818828182881"
+        extra={[<Button key="Export" href='./dimensions.csv'>Eksport</Button>]}
     />
 
 const renderLoading = (progress) =>
