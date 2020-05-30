@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   setModalVisible(modalVisible) {
-    if (modalVisible) this.setState({ status: 'dimensions', progress: 0 });
+    if (modalVisible) this.setState({ step: 'dimensions', progress: 0 });
     this.setState({ modalVisible });
   }
 
