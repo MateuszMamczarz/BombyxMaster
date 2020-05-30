@@ -135,3 +135,58 @@ img.icon {
 .dress-carousel .slick-dots li button {
   background: black;
 }
+
+.dress-2-0 {
+  background: url('./images/sylw_02_kol.png') no-repeat;
+  background-size: contain;
+}
+
+.dress-2-1 {
+  background: url('./images/sylw_02_rekaw.png') no-repeat;
+  background-size: contain;
+}
+
+.dress-2-2 {
+  background: url('./images/sylw_02_talia.png') no-repeat;
+  background-size: contain;
+}
+
+.dress-2-3 {
+  background: url('./images/sylw_02_dl.png') no-repeat;
+  background-size: contain;
+}
+
+.collar-area-2 {
+  position: relative;
+  width: 8vh;
+  height: 8vh;
+  /* border: solid red 1px; */
+  top: 13%;
+  left: 2vh;
+}
+
+.arms-area-2 {
+  position: relative;
+  width: 8vh;
+  height: 8vh;
+  /* border: solid green 1px; */
+  top: 11%;
+  left: 17vh;
+}
+
+.hip-area-2 {
+  position: relative;
+  width: 8vh;
+  height: 8vh;
+  /* border: solid blue 1px; */
+  top: 7%;
+  left: 1vh;
+}
+
+.width-area-2 {
+  position: relative;
+  width: 14vh;
+  height: 13vh;
+  /* border: solid orange 1px; */
+  top: 21%;
+}
