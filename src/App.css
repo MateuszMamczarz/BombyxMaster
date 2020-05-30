@@ -8,19 +8,19 @@
 }
 
 .title {
-  color: blue;
+  color: #403681;
   padding: 10%;
   display: inline-block;
   font-size: 3em;
 }
 
 .picker-container {
-  border: 5px solid blue;
+  border: 4px solid #403681;
   width: 400px;
   height: 500px;
   position: relative;
-  top: 5%;
-  left: 5%;
+  top: 10%;
+  left: 8%;
   color: black;
 }
 
@@ -45,4 +45,23 @@
 
 .right {
   margin-left: 20px;
+}
+
+.dress-model {
+  background: url('./images/postac_biodra.png');
+  background-size: cover;
+  width: 200px;
+  height: 650px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+.sheets {
+  background: url('./images/sheets.png');
+  background-size: cover;
+  width: 100%;
+  height: 130%;
+  position: relative;
+  top: -66%;
 }
