@@ -34,7 +34,7 @@ class App extends React.Component {
           this.setState({ status: 'success' })
         }, 1500);
       }
-    }, 500);
+    }, 700);
   }
 
   render() {

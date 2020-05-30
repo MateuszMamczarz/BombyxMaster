@@ -44,15 +44,16 @@ const renderSuccess = ({ status, progress }) => {
     switch (status) {
         case 'loading':
             return (
-                <div style={{ textAlign: 'center' }}>
-                    <Progress type="circle" percent={progress} />;
-                    <p style={{ padding: '64px' }}>{getProgressDescription(progress)}</p>
+                <div style={{ textAlign: 'center', height: '350px', verticalAlign: 'middle', padding: '64px' }}>
+                    <Progress type="circle" percent={progress} />
+                    <h2 style={{ padding: '64px' }}>{getProgressDescription(progress)}</h2>
                 </div>
             );
         case 'success':
         default:
             return (
                 <Result
+                    style={{ height: '350px' }}
                     status="success"
                     title="Your design is ready!"
                     subTitle="Order number: 2017182818828182881"
@@ -64,19 +65,20 @@ const renderSuccess = ({ status, progress }) => {
 const getProgressDescription = (progress) => {
     switch (progress) {
         case 0:
-            return 'Validating dimensions'
         case 10:
+            return 'Validating Inverse Dimension Matrix'
         case 20:
-            return 'Adding fabolous materials';
         case 30:
+            return 'Synthesizing fabolous materials';
         case 40:
         case 50:
-            return 'Enhancing dimensions';
+            return 'Initializing Robotic Sewing-Path AI';
         case 60:
         case 70:
-            return 'Optimizing magical style ';
+            return 'Threading fabric compositors';
         case 80:
         case 90:
+            return 'Recalculating 4D splines';
         case 100:
             return 'Finalizing your clothes';
         default:
@@ -98,6 +100,7 @@ const Dialog = ({ status, visible, onOk, onCancel, progress }) =>
         visible={visible}
         onOk={onOk}
         onCancel={onCancel}
+        okButtonProps={{ disabled: status === 'loading' }}
     >
         {status === 'results' ? renderResults() : renderSuccess({ status, progress })}
 
