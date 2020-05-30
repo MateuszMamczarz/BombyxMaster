@@ -1,9 +1,8 @@
 import React from 'react';
 
-const Dress = ({}) => {
+const Dress = () => {
     return (
         <div className='dress-model'>
-
         </div>
     )
 }

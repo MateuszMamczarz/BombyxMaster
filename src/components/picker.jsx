@@ -3,24 +3,26 @@ import { Row, Col } from 'antd';
 
 const Picker = ({ title, options }) => {
     return (
-        <div className='picker-container'>
-            <label className='title'>{title}</label>
-            <Row>
-                <Col span={12}>
-                    <div className='circle left'></div>
-                </Col>
-                <Col span={12}>
-                    <div className='circle right'></div>
-                </Col>
-            </Row>
-            <Row>
-                <Col span={12}>
-                    <div className='circle left'></div>
-                </Col>
-                <Col span={12}>
-                    <div className='circle right'></div>
-                </Col>
-            </Row>
+        <div className="picker-container">
+            <div className="title">{title}</div>
+            <div className="circles">
+                <Row gutter={[32, 32]} >
+                    <Col span={12}>
+                        <div className="circle"></div>
+                    </Col>
+                    <Col span={12}>
+                        <div className="circle"></div>
+                    </Col>
+                </Row>
+                <Row gutter={[32, 32]} >
+                    <Col span={12}>
+                        <div className="circle"></div>
+                    </Col>
+                    <Col span={12}>
+                        <div className="circle"></div>
+                    </Col>
+                </Row>
+            </div>
         </div>
     )
 }
