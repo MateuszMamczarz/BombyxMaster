@@ -4,6 +4,7 @@ import Picker from './components/picker'
 import Dress from './components/dress'
 import Sheets from './components/sheets'
 import Dialog from './components/dialog'
+import { RightOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 
 
@@ -72,7 +73,7 @@ class App extends React.Component {
       case 'results':
         return 'Wynik';
       case 'loading': // should never happen
-      return 'Ładowanie';
+        return 'Ładowanie';
       case 'success':
         return 'Sukces';
       default:
@@ -91,8 +92,13 @@ class App extends React.Component {
         <Sheets>
           <Dress selectedArea={this.state.selectedArea} onAreaChange={this.onAreaChange} />
         </Sheets>
-        <Button type="primary" onClick={() => this.setModalVisible(true)} style={{ position: 'fixed', right: '16px', bottom: '16px' }} >
-          {this.getName(this.state.step)}
+        <Button
+          icon={<RightOutlined style={{ fontSize: '48px' }} />}
+          size="large"
+          shape="circle"
+          type="primary"
+          onClick={() => this.setModalVisible(true)}
+          style={{ position: 'fixed', right: '32px', bottom: '32px' }} >
         </Button>
         <Dialog
           step={this.state.step}

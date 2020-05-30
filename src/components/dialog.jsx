@@ -40,7 +40,7 @@ const renderResults = () =>
         <Col span={12}>
             <Carousel autoplay>
                 <img alt="example" height="460" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-                <img alt="example" height="460" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+                <img alt="example" height="460" src="http://www.todaydresses.com/wp-content/uploads/2016/01/The-bare-legs-her-bare-legs-in-winter-1.jpg" />
             </Carousel>
         </Col>
         <Col span={12}>
