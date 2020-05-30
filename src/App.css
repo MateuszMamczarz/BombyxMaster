@@ -7,6 +7,10 @@
   background-size: cover;
 }
 
+.main-section.bg2{
+  background-image: url('./images/bg2.png');
+}
+
 .title {
   color: #403681;
   padding: 24px 64px;
